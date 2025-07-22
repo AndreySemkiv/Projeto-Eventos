@@ -1,0 +1,90 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\marcelo38548\\onedrive - sistema fiep\\source\\projeto eventos\\eventos.view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\marcelo38548\\onedrive - sistema fiep\\source\\projeto eventos\\eventos.view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\marcelo38548\\onedrive - sistema fiep\\source\\projeto eventos\\eventos.view\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Principal.cs",
+              "DocumentMoniker": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\Principal.cs",
+              "RelativeDocumentMoniker": "Principal.cs",
+              "ToolTip": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\Principal.cs",
+              "RelativeToolTip": "Principal.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswBUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T00:30:02.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Principal.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\Principal.cs",
+              "RelativeDocumentMoniker": "Principal.cs",
+              "ToolTip": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\Principal.cs [Design]",
+              "RelativeToolTip": "Principal.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T00:30:00.274Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProdutoView.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\ProdutoView.cs",
+              "RelativeDocumentMoniker": "ProdutoView.cs",
+              "ToolTip": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\ProdutoView.cs [Design]",
+              "RelativeToolTip": "ProdutoView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T14:26:27.604Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProdutoView.cs",
+              "DocumentMoniker": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\ProdutoView.cs",
+              "RelativeDocumentMoniker": "ProdutoView.cs",
+              "ToolTip": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\ProdutoView.cs",
+              "RelativeToolTip": "ProdutoView.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAKABAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T14:17:34.91Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
