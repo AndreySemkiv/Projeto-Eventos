@@ -1,6 +1,6 @@
 ﻿namespace Eventos.View
 {
-    partial class frmEstadoView
+    partial class frmCorView
     {
         /// <summary>
         /// Required designer variable.

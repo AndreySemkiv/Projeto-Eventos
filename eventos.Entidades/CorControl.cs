@@ -10,38 +10,38 @@ using Eventos.Model;
 
 namespace Eventos.Control
 {
-    public class EstadoControl
+    public class CorControl
     {
-        private EstadoDAO estadoDAO = new EstadoDAO();
+        private CorDAO corDAO = new CorDAO();
 
-        public DataTable GetAllEstados()
+        public DataTable GetAllCors()
         {
-            return estadoDAO.GetAll();
+            return corDAO.GetAll();
         }
 
-        public DataTable GetEstadoAsDataTable(string descricao)
+        public DataTable GetCorAsDataTable(string cod_cor)
         {
-            return estadoDAO.GetEstadoAsDataTable(descricao);
+            return corDAO.GetCorAsDataTable(cod_cor);
         }
 
-        public Estado GetEstadoByEstado(string nome)
+        public Cor GetCorByCor(string nome)
         {
-            return estadoDAO.GetByEstado(nome);
+            return corDAO.GetByCor(nome);
         }
 
-        public void AddEstado(Estado estado)
+        public void AddCor(Cor cor)
         {
-            estadoDAO.Add(estado);
+            corDAO.Add(cor);
         }
 
-        public void UpdateEstado(Estado estado)
+        public void UpdateCor(Cor cor)
         {
-            estadoDAO.Update(estado);
+            corDAO.Update(cor);
         }
 
-        public void DeleteEstado(Estado estado)
+        public void DeleteCor(Cor cor)
         {
-            estadoDAO.Delete(estado);
+            corDAO.Delete(cor);
         }
     }
 }

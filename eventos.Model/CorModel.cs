@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Eventos.Model
 {
-    public class Estado
+    public class Cor
     {
-        public int IdEstado { get; set; }
-        public string Estado_nome { get; set; }
-        public int IdPais { get; set; }
-        public string Pais_nome { get; set; }
+        public int IdCor { get; set; }
+        public string CorNome { get; set; }
+        public string CodCor { get; set; }
     }
 }

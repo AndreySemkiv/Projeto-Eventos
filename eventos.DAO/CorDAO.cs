@@ -46,7 +46,7 @@ namespace Eventos.DAO
         }
 
         // Carregar dados no Grid
-        public DataTable GetCorAsDataTable(string descricao)
+        public DataTable GetCorAsDataTable(string cod_cor)
         {
             
             string query = "SELECT \r\n" +
@@ -65,7 +65,7 @@ namespace Eventos.DAO
                 conn.Open();
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@cor.cod_rgb_hexa_cmyk", descricao);
+                cmd.Parameters.AddWithValue("@cor.cod_rgb_hexa_cmyk", cod_cor);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
@@ -75,7 +75,7 @@ namespace Eventos.DAO
         }
 
         // Carregar dados da Pesquisa
-        public Cor GetByCor(string Descricao)
+        public Cor GetByCor(string Cod_cor)
         {
             Cor cor = null;
 
@@ -87,18 +87,16 @@ namespace Eventos.DAO
                 string query = "SELECT \r\n" +
                     "   cor.id_cor AS Id, \r\n" +
                     "   cor.cor_nome AS Cor, \r\n" +
-                    "   pais.pais_nome AS País \r\n" +
+                    "   cor.cod_rgb_hexa_cmyk AS Cod_Cor\r\n" +
                     "FROM \r\n" +
                     "   cor \r\n" +
-                    "INNER JOIN \r\n" +
-                    "   pais ON cor.id_pais = pais.id_pais \r\n" +
                     "WHERE \r\n" +
-                    "   cor_nome \r\n" +
+                    "   cod_rgb_hexa_cmyk \r\n" +
                     "LIKE CONCAT('%',@cor_nome,'%')";
                 
                 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@cor_nome", Descricao);
+                cmd.Parameters.AddWithValue("@cod_rgb_hexa_cmyk", Cod_cor);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -107,9 +105,8 @@ namespace Eventos.DAO
                         cor = new Cor()
                         {
                             IdCor = reader.GetInt32("Id"),
-                            Cor_nome = reader.GetString("Cor"),
-                            // necessário adicionar esse campo no Model para que o objeto traga o nome do país
-                            Pais_nome = reader.GetString("País")
+                            CorNome = reader.GetString("Cor"),
+                            CodCor = reader.GetString("Cod_RGB")
                         };
                     }
                 }
@@ -128,13 +125,13 @@ namespace Eventos.DAO
                 // Insere na tabela cor
                 string query = "INSERT INTO \r\n" +
                     "cor \r\n" +
-                        "(cor_nome, id_pais) \r\n" +
+                        "(cor_nome, cod_rgb_hexa_cmyk) \r\n" +
                     "VALUES \r\n" +
-                        "(@cor_nome, @id_pais)";
+                        "(@cor_nome, @cod_rgb_hexa_cmyk))";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@cor_nome", cor.Cor_nome);
-                cmd.Parameters.AddWithValue("@id_pais", cor.IdPais);
+                cmd.Parameters.AddWithValue("@cor_nome", cor.CorNome);
+                cmd.Parameters.AddWithValue("@cod_rgb_hexa_cmyk", cor.CodCor);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -151,13 +148,13 @@ namespace Eventos.DAO
                     "   cor \r\n" +
                     "SET \r\n" +
                     "   cor.cor_nome = @cor_nome, \r\n" +
-                    "   cor.id_pais = @id_pais \r\n" +
+                    "   cor.cod_rgb_hexa_cmyk = @cod_rgb_hexa_cmyk \r\n" +
                     "WHERE \r\n" +
                     "   cor.id_cor = @id_cor";
                                
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@cor_nome", cor.Cor_nome);
-                cmd.Parameters.AddWithValue("@id_pais", cor.IdPais);
+                cmd.Parameters.AddWithValue("@cor_nome", cor.CorNome);
+                cmd.Parameters.AddWithValue("@cod_rgb_hexa_cmyk", cor.CodCor);
                 cmd.Parameters.AddWithValue("@id_cor", cor.IdCor);
                 cmd.ExecuteNonQuery();
             }

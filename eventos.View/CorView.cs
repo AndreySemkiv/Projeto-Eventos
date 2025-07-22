@@ -17,14 +17,14 @@ using Eventos.Control;
 
 namespace Eventos.View
 {
-    public partial class frmEstadoView : Form
+    public partial class frmCorView : Form
     {
         String mensagem = "";
 
         public frmCorView()
         {
             InitializeComponent();
-            txtEstado.Enabled = false;
+            txtCor.Enabled = false;
             cbbPais.Enabled = false;
             CarregarDados();
 
@@ -32,7 +32,7 @@ namespace Eventos.View
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            txtEstado.Enabled = true;
+            txtCor.Enabled = true;
             cbbPais.Enabled = true;
             CarregarPais();
             cbbPais.ResetText();
@@ -40,7 +40,7 @@ namespace Eventos.View
 
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
-            txtEstado.Enabled = true;
+            txtCor.Enabled = true;
             cbbPais.Enabled = false;
             cbbPais.ResetText();
         }
@@ -49,7 +49,7 @@ namespace Eventos.View
         {
             try
             {
-                string descricao = txtEstado.Text;
+                string descricao = txtCor.Text;
 
                 if (string.IsNullOrEmpty(descricao))
                 {
@@ -57,55 +57,55 @@ namespace Eventos.View
                     return;
                 }
 
-                if (estadoIdSelecionado.HasValue)
+                if (corIdSelecionado.HasValue)
                 {
-                    // Atualizar o estado existente
-                    Estado estadoAtualizado = new Estado()
+                    // Atualizar o cor existente
+                    Cor corAtualizado = new Cor()
                     {
-                        IdEstado = estadoIdSelecionado.Value,
-                        Estado_nome = descricao,
+                        IdCor = corIdSelecionado.Value,
+                        Cor_nome = descricao,
                         IdPais = cbbPais.SelectedValue.GetHashCode()
                     };
 
-                    estadoDAO.Update(estadoAtualizado);
-                    MessageBox.Show("Estado atualizado com sucesso!");
+                    corDAO.Update(corAtualizado);
+                    MessageBox.Show("Cor atualizado com sucesso!");
                 }
                 else
                 {
-                    // Adicionar novo estado
-                    Estado novoEstado = new Estado()
+                    // Adicionar novo cor
+                    Cor novoCor = new Cor()
                     {
-                        Estado_nome = descricao,
+                        Cor_nome = descricao,
                         IdPais = cbbPais.SelectedValue.GetHashCode()
                     };
 
-                    estadoDAO.Add(novoEstado);
-                    MessageBox.Show("Estado salvo com sucesso!");
+                    corDAO.Add(novoCor);
+                    MessageBox.Show("Cor salvo com sucesso!");
                 }
 
                 // Limpar o TextBox
-                txtEstado.Text = string.Empty;
-                txtEstado.Enabled = false;
+                txtCor.Text = string.Empty;
+                txtCor.Enabled = false;
                 cbbPais.Enabled = false;
                 cbbPais.ResetText();
-                estadoIdSelecionado = null;
+                corIdSelecionado = null;
 
                 // Recarregar os dados no DataGridView após salvar
                 CarregarDados();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao salvar estado: {ex.Message}");
+                MessageBox.Show($"Erro ao salvar cor: {ex.Message}");
             }
         }
 
-        private int? estadoIdSelecionado = null;
+        private int? corIdSelecionado = null;
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             try
             {
-                string descricao = txtEstado.Text;
+                string descricao = txtCor.Text;
 
                 if (string.IsNullOrEmpty(descricao))
                 {
@@ -113,25 +113,25 @@ namespace Eventos.View
                     return;
                 }
 
-                if (estadoIdSelecionado.HasValue)
+                if (corIdSelecionado.HasValue)
                 {
-                    // Excluir o Estado
-                    Estado estadoAtualizado = new Estado()
+                    // Excluir o Cor
+                    Cor corAtualizado = new Cor()
                     {
-                        IdEstado = estadoIdSelecionado.Value,
-                        Estado_nome = descricao,
-                        IdPais = estadoIdSelecionado.Value
+                        IdCor = corIdSelecionado.Value,
+                        Cor_nome = descricao,
+                        IdPais = corIdSelecionado.Value
                     };
 
-                    estadoDAO.Delete(estadoAtualizado);
-                    MessageBox.Show("Estado Excluído com sucesso!");
+                    corDAO.Delete(corAtualizado);
+                    MessageBox.Show("Cor Excluído com sucesso!");
 
                     // Limpar o TextBox
-                    txtEstado.Text = string.Empty;
-                    txtEstado.Enabled = false;
+                    txtCor.Text = string.Empty;
+                    txtCor.Enabled = false;
                     cbbPais.Enabled = false;
                     cbbPais.ResetText();
-                    estadoIdSelecionado = null;
+                    corIdSelecionado = null;
 
                     // Recarregar os dados no DataGridView após salvar
                     CarregarDados();
@@ -139,7 +139,7 @@ namespace Eventos.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao Excluir estado: {ex.Message}");
+                MessageBox.Show($"Erro ao Excluir cor: {ex.Message}");
             }
 
         }
@@ -148,7 +148,7 @@ namespace Eventos.View
         {
             try
             {
-                string descricao = txtEstado.Text;
+                string descricao = txtCor.Text;
 
                 if (string.IsNullOrEmpty(descricao))
                 {
@@ -156,35 +156,35 @@ namespace Eventos.View
                     return;
                 }
 
-                var estado = estadoDAO.GetByEstado(descricao);
+                var cor = corDAO.GetByCor(descricao);
 
-                if (estado != null)
+                if (cor != null)
                 {
-                    // Se o estado for encontrado, mostrar os dados no DataGridView
-                    DataTable dataTable = estadoDAO.GetEstadoAsDataTable(descricao);
+                    // Se o cor for encontrado, mostrar os dados no DataGridView
+                    DataTable dataTable = corDAO.GetCorAsDataTable(descricao);
                     dataGridView1.DataSource = dataTable;
                 }
                 else
                 {
-                    MessageBox.Show("Estado não encontrado.");
+                    MessageBox.Show("Cor não encontrado.");
                 }
 
-                txtEstado.Text = string.Empty;
-                txtEstado.Enabled = false;
+                txtCor.Text = string.Empty;
+                txtCor.Enabled = false;
                 cbbPais.Enabled = false;
                 cbbPais.ResetText();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao carregar estado: {ex.Message}");
+                MessageBox.Show($"Erro ao carregar cor: {ex.Message}");
             }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            txtEstado.Clear();
-            txtEstado.Enabled = false;
+            txtCor.Clear();
+            txtCor.Enabled = false;
             cbbPais.ResetText();
             cbbPais.Enabled = false;
         }
@@ -195,12 +195,12 @@ namespace Eventos.View
         }
 
         // Carrega dados no GRID
-        private EstadoDAO estadoDAO = new EstadoDAO();
+        private CorDAO corDAO = new CorDAO();
         private void CarregarDados()
         {
             try
             {
-                DataTable dataTable = estadoDAO.GetAll();
+                DataTable dataTable = corDAO.GetAll();
                 dataGridView1.DataSource = dataTable;
             }
             catch (Exception ex)
@@ -215,7 +215,7 @@ namespace Eventos.View
         {
             try
             {
-                // Obtém os dados do banco de dados usando o EstadoDAO
+                // Obtém os dados do banco de dados usando o CorDAO
                 DataTable dataTable = paisDAO.GetAll();
 
                 // Verifica se as colunas necessárias estão presentes
@@ -240,24 +240,24 @@ namespace Eventos.View
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Obter o ID do estado selecionado no DataGridView
-                estadoIdSelecionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
+                // Obter o ID do cor selecionado no DataGridView
+                corIdSelecionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
 
-                // Obter a descrição do estado e carregar no TextBox
-                string descricao = dataGridView1.SelectedRows[0].Cells["Estado"].Value.ToString();
-                txtEstado.Text = descricao;
+                // Obter a descrição do cor e carregar no TextBox
+                string descricao = dataGridView1.SelectedRows[0].Cells["Cor"].Value.ToString();
+                txtCor.Text = descricao;
 
                 // Obter o ID do pais selecionado no DataGridView
                 CarregarPais();
                 cbbPais.Text = dataGridView1.SelectedRows[0].Cells["País"].Value.ToString();
 
-                txtEstado.Enabled = true;
+                txtCor.Enabled = true;
                 cbbPais.Enabled = true;
 
             }
             else
             {
-                MessageBox.Show("Selecione um estado para editar.");
+                MessageBox.Show("Selecione um cor para editar.");
             }
         }
 
@@ -268,8 +268,8 @@ namespace Eventos.View
 
         private void btnAddPais_Click(object sender, EventArgs e)
         {
-            txtEstado.Clear();
-            txtEstado.Enabled = false;
+            txtCor.Clear();
+            txtCor.Enabled = false;
             cbbPais.ResetText();
             cbbPais.Enabled = false;
             frmPaisView add = new frmPaisView();
