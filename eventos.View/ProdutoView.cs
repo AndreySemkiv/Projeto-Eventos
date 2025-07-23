@@ -440,8 +440,8 @@ namespace Eventos.View
 
         private void btnAddCor_Click(object sender, EventArgs e)
         {
-            //frmCorView add = new frmCorView();
-            //add.ShowDialog();
+            frmCorView add = new frmCorView();
+            add.ShowDialog();
         }
     }
 }

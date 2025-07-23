@@ -89,9 +89,9 @@ namespace Eventos.View
 
                 // Limpar o TextBox
                 txtCor.Text = string.Empty;
+                txtCodCor.Text = string.Empty;
                 txtCor.Enabled = false;
                 txtCodCor.Enabled = false;
-                txtCodCor.ResetText();
                 corIdSelecionado = null;
 
                 // Recarregar os dados no DataGridView após salvar
@@ -110,10 +110,11 @@ namespace Eventos.View
             try
             {
                 string descricao = txtCor.Text;
+                string cod_cor = txtCodCor.Text;
 
-                if (string.IsNullOrEmpty(descricao))
+                if (string.IsNullOrEmpty(cod_cor))
                 {
-                    MessageBox.Show("A descrição é obrigatória.");
+                    MessageBox.Show("O código é obrigatório.");
                     return;
                 }
 
@@ -123,8 +124,8 @@ namespace Eventos.View
                     Cor corAtualizado = new Cor()
                     {
                         IdCor = corIdSelecionado.Value,
-                        Cor_nome = descricao,
-                        IdPais = corIdSelecionado.Value
+                        CorNome = descricao,
+                        CodCor = cod_cor
                     };
 
                     corDAO.Delete(corAtualizado);
@@ -132,9 +133,9 @@ namespace Eventos.View
 
                     // Limpar o TextBox
                     txtCor.Text = string.Empty;
+                    txtCodCor.Text = string.Empty;
                     txtCor.Enabled = false;
                     txtCodCor.Enabled = false;
-                    txtCodCor.ResetText();
                     corIdSelecionado = null;
 
                     // Recarregar os dados no DataGridView após salvar
@@ -152,20 +153,20 @@ namespace Eventos.View
         {
             try
             {
-                string descricao = txtCor.Text;
+                string cod_cor = txtCodCor.Text;
 
-                if (string.IsNullOrEmpty(descricao))
+                if (string.IsNullOrEmpty(cod_cor))
                 {
-                    MessageBox.Show("A descrição é obrigatória.");
+                    MessageBox.Show("O código é obrigatório.");
                     return;
                 }
 
-                var cor = corDAO.GetByCor(descricao);
+                var cor = corDAO.GetByCor(cod_cor);
 
                 if (cor != null)
                 {
                     // Se o cor for encontrado, mostrar os dados no DataGridView
-                    DataTable dataTable = corDAO.GetCorAsDataTable(descricao);
+                    DataTable dataTable = corDAO.GetCorAsDataTable(cod_cor);
                     dataGridView1.DataSource = dataTable;
                 }
                 else
@@ -174,9 +175,9 @@ namespace Eventos.View
                 }
 
                 txtCor.Text = string.Empty;
+                txtCodCor.Text = string.Empty;
                 txtCor.Enabled = false;
                 txtCodCor.Enabled = false;
-                txtCodCor.ResetText();
 
             }
             catch (Exception ex)
@@ -189,7 +190,7 @@ namespace Eventos.View
         {
             txtCor.Clear();
             txtCor.Enabled = false;
-            txtCodCor.ResetText();
+            txtCodCor.Clear();
             txtCodCor.Enabled = false;
         }
 
@@ -213,33 +214,6 @@ namespace Eventos.View
             }
         }
 
-        // Carrega dados no ComboBox
-        private PaisDAO paisDAO = new PaisDAO();
-        private void CarregarPais()
-        {
-            try
-            {
-                // Obtém os dados do banco de dados usando o CorDAO
-                DataTable dataTable = paisDAO.GetAll();
-
-                // Verifica se as colunas necessárias estão presentes
-                if (dataTable.Columns.Contains("País") && dataTable.Columns.Contains("Id"))
-                {
-                    txtCodCor.DataSource = dataTable;
-                    txtCodCor.DisplayMember = "País";
-                    txtCodCor.ValueMember = "Id";
-                }
-                else 
-                {
-                    MessageBox.Show("Não Localizado!!!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
-            }
-        }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -251,9 +225,8 @@ namespace Eventos.View
                 string descricao = dataGridView1.SelectedRows[0].Cells["Cor"].Value.ToString();
                 txtCor.Text = descricao;
 
-                // Obter o ID do pais selecionado no DataGridView
-                CarregarPais();
-                txtCodCor.Text = dataGridView1.SelectedRows[0].Cells["País"].Value.ToString();
+                // Obter o código da cor
+                txtCodCor.Text = dataGridView1.SelectedRows[0].Cells["Cod_Cor"].Value.ToString();
 
                 txtCor.Enabled = true;
                 txtCodCor.Enabled = true;
@@ -261,23 +234,13 @@ namespace Eventos.View
             }
             else
             {
-                MessageBox.Show("Selecione um cor para editar.");
+                MessageBox.Show("Selecione uma cor para editar.");
             }
         }
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             CarregarDados();
-        }
-
-        private void btnAddPais_Click(object sender, EventArgs e)
-        {
-            txtCor.Clear();
-            txtCor.Enabled = false;
-            txtCodCor.ResetText();
-            txtCodCor.Enabled = false;
-            frmPaisView add = new frmPaisView();
-            add.ShowDialog();
         }
     }
 }
