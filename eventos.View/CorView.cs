@@ -25,7 +25,7 @@ namespace Eventos.View
         {
             InitializeComponent();
             txtCor.Enabled = false;
-            cbbPais.Enabled = false;
+            txtCodCor.Enabled = false;
             CarregarDados();
 
         }
@@ -33,16 +33,13 @@ namespace Eventos.View
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             txtCor.Enabled = true;
-            cbbPais.Enabled = true;
-            CarregarPais();
-            cbbPais.ResetText();
+            txtCodCor.Enabled = true;
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
-            txtCor.Enabled = true;
-            cbbPais.Enabled = false;
-            cbbPais.ResetText();
+            txtCor.Enabled = false;
+            txtCodCor.Enabled = true;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -50,10 +47,17 @@ namespace Eventos.View
             try
             {
                 string descricao = txtCor.Text;
+                string cod_cor = txtCodCor.Text;
 
                 if (string.IsNullOrEmpty(descricao))
                 {
-                    MessageBox.Show("A descrição é obrigatória.");
+                    MessageBox.Show("O Nome da Cor é obrigatório.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(cod_cor))
+                {
+                    MessageBox.Show("O Código da Cor é obrigatório.");
                     return;
                 }
 
@@ -63,31 +67,31 @@ namespace Eventos.View
                     Cor corAtualizado = new Cor()
                     {
                         IdCor = corIdSelecionado.Value,
-                        Cor_nome = descricao,
-                        IdPais = cbbPais.SelectedValue.GetHashCode()
+                        CorNome = descricao,
+                        CodCor = cod_cor
                     };
 
                     corDAO.Update(corAtualizado);
-                    MessageBox.Show("Cor atualizado com sucesso!");
+                    MessageBox.Show("Cor atualizada com sucesso!");
                 }
                 else
                 {
-                    // Adicionar novo cor
-                    Cor novoCor = new Cor()
+                    // Adicionar nova cor
+                    Cor novaCor = new Cor()
                     {
-                        Cor_nome = descricao,
-                        IdPais = cbbPais.SelectedValue.GetHashCode()
+                        CorNome = descricao,
+                        CodCor = cod_cor
                     };
 
-                    corDAO.Add(novoCor);
+                    corDAO.Add(novaCor);
                     MessageBox.Show("Cor salvo com sucesso!");
                 }
 
                 // Limpar o TextBox
                 txtCor.Text = string.Empty;
                 txtCor.Enabled = false;
-                cbbPais.Enabled = false;
-                cbbPais.ResetText();
+                txtCodCor.Enabled = false;
+                txtCodCor.ResetText();
                 corIdSelecionado = null;
 
                 // Recarregar os dados no DataGridView após salvar
@@ -129,8 +133,8 @@ namespace Eventos.View
                     // Limpar o TextBox
                     txtCor.Text = string.Empty;
                     txtCor.Enabled = false;
-                    cbbPais.Enabled = false;
-                    cbbPais.ResetText();
+                    txtCodCor.Enabled = false;
+                    txtCodCor.ResetText();
                     corIdSelecionado = null;
 
                     // Recarregar os dados no DataGridView após salvar
@@ -171,8 +175,8 @@ namespace Eventos.View
 
                 txtCor.Text = string.Empty;
                 txtCor.Enabled = false;
-                cbbPais.Enabled = false;
-                cbbPais.ResetText();
+                txtCodCor.Enabled = false;
+                txtCodCor.ResetText();
 
             }
             catch (Exception ex)
@@ -185,8 +189,8 @@ namespace Eventos.View
         {
             txtCor.Clear();
             txtCor.Enabled = false;
-            cbbPais.ResetText();
-            cbbPais.Enabled = false;
+            txtCodCor.ResetText();
+            txtCodCor.Enabled = false;
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -221,9 +225,9 @@ namespace Eventos.View
                 // Verifica se as colunas necessárias estão presentes
                 if (dataTable.Columns.Contains("País") && dataTable.Columns.Contains("Id"))
                 {
-                    cbbPais.DataSource = dataTable;
-                    cbbPais.DisplayMember = "País";
-                    cbbPais.ValueMember = "Id";
+                    txtCodCor.DataSource = dataTable;
+                    txtCodCor.DisplayMember = "País";
+                    txtCodCor.ValueMember = "Id";
                 }
                 else 
                 {
@@ -249,10 +253,10 @@ namespace Eventos.View
 
                 // Obter o ID do pais selecionado no DataGridView
                 CarregarPais();
-                cbbPais.Text = dataGridView1.SelectedRows[0].Cells["País"].Value.ToString();
+                txtCodCor.Text = dataGridView1.SelectedRows[0].Cells["País"].Value.ToString();
 
                 txtCor.Enabled = true;
-                cbbPais.Enabled = true;
+                txtCodCor.Enabled = true;
 
             }
             else
@@ -270,8 +274,8 @@ namespace Eventos.View
         {
             txtCor.Clear();
             txtCor.Enabled = false;
-            cbbPais.ResetText();
-            cbbPais.Enabled = false;
+            txtCodCor.ResetText();
+            txtCodCor.Enabled = false;
             frmPaisView add = new frmPaisView();
             add.ShowDialog();
         }

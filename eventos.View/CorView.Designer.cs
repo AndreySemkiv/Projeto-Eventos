@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstadoView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCorView));
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnLocalizar = new System.Windows.Forms.Button();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.lblCor = new System.Windows.Forms.Label();
+            this.txtCor = new System.Windows.Forms.TextBox();
             this.lblMensagem = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -45,9 +45,8 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnAddPais = new System.Windows.Forms.Button();
-            this.lblPais = new System.Windows.Forms.Label();
-            this.cbbPais = new System.Windows.Forms.ComboBox();
+            this.lblCodCor = new System.Windows.Forms.Label();
+            this.txtCodCor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,10 +56,9 @@
             this.btnAdicionar.AccessibleName = "";
             this.btnAdicionar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
-            this.btnAdicionar.Location = new System.Drawing.Point(36, 54);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdicionar.Location = new System.Drawing.Point(27, 44);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(111, 96);
+            this.btnAdicionar.Size = new System.Drawing.Size(83, 78);
             this.btnAdicionar.TabIndex = 0;
             this.btnAdicionar.Tag = "";
             this.toolTip1.SetToolTip(this.btnAdicionar, "Adicionar");
@@ -71,10 +69,9 @@
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(440, 54);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalvar.Location = new System.Drawing.Point(330, 44);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(111, 96);
+            this.btnSalvar.Size = new System.Drawing.Size(83, 78);
             this.btnSalvar.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnSalvar, "Salvar");
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -84,10 +81,9 @@
             // 
             this.btnEditar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(305, 54);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(229, 44);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(111, 96);
+            this.btnEditar.Size = new System.Drawing.Size(83, 78);
             this.btnEditar.TabIndex = 2;
             this.toolTip1.SetToolTip(this.btnEditar, "Editar");
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -97,54 +93,49 @@
             // 
             this.btnLocalizar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
-            this.btnLocalizar.Location = new System.Drawing.Point(170, 54);
-            this.btnLocalizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLocalizar.Location = new System.Drawing.Point(128, 44);
             this.btnLocalizar.Name = "btnLocalizar";
-            this.btnLocalizar.Size = new System.Drawing.Size(111, 96);
+            this.btnLocalizar.Size = new System.Drawing.Size(83, 78);
             this.btnLocalizar.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btnLocalizar, "Localizar");
             this.btnLocalizar.UseVisualStyleBackColor = true;
             this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
-            // lblEstado
+            // lblCor
             // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(79, 181);
-            this.lblEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(113, 33);
-            this.lblEstado.TabIndex = 4;
-            this.lblEstado.Text = "Estado :";
+            this.lblCor.AutoSize = true;
+            this.lblCor.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCor.Location = new System.Drawing.Point(59, 147);
+            this.lblCor.Name = "lblCor";
+            this.lblCor.Size = new System.Drawing.Size(51, 25);
+            this.lblCor.TabIndex = 4;
+            this.lblCor.Text = "Cor:";
             // 
-            // txtEstado
+            // txtCor
             // 
-            this.txtEstado.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(193, 180);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(466, 36);
-            this.txtEstado.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.txtEstado, "Digite aqui o Estado");
+            this.txtCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCor.Location = new System.Drawing.Point(145, 146);
+            this.txtCor.Name = "txtCor";
+            this.txtCor.Size = new System.Drawing.Size(350, 30);
+            this.txtCor.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.txtCor, "Digite aqui o nome da Cor");
             // 
             // lblMensagem
             // 
             this.lblMensagem.AutoSize = true;
             this.lblMensagem.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.Location = new System.Drawing.Point(419, 401);
-            this.lblMensagem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMensagem.Location = new System.Drawing.Point(314, 326);
             this.lblMensagem.Name = "lblMensagem";
-            this.lblMensagem.Size = new System.Drawing.Size(0, 29);
+            this.lblMensagem.Size = new System.Drawing.Size(0, 23);
             this.lblMensagem.TabIndex = 6;
             // 
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(584, 54);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcluir.Location = new System.Drawing.Point(438, 44);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(111, 96);
+            this.btnExcluir.Size = new System.Drawing.Size(83, 78);
             this.btnExcluir.TabIndex = 7;
             this.toolTip1.SetToolTip(this.btnExcluir, "Excluir");
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -154,10 +145,9 @@
             // 
             this.btnPesquisar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
-            this.btnPesquisar.Location = new System.Drawing.Point(81, 300);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPesquisar.Location = new System.Drawing.Point(61, 244);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(111, 96);
+            this.btnPesquisar.Size = new System.Drawing.Size(83, 78);
             this.btnPesquisar.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btnPesquisar, "Pesquisar");
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -167,10 +157,9 @@
             // 
             this.btnSair.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(584, 476);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSair.Location = new System.Drawing.Point(438, 387);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(111, 96);
+            this.btnSair.Size = new System.Drawing.Size(83, 78);
             this.btnSair.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btnSair, "Sair");
             this.btnSair.UseVisualStyleBackColor = true;
@@ -180,10 +169,9 @@
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
-            this.btnLimpar.Location = new System.Drawing.Point(336, 300);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpar.Location = new System.Drawing.Point(252, 244);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(111, 96);
+            this.btnLimpar.Size = new System.Drawing.Size(83, 78);
             this.btnLimpar.TabIndex = 10;
             this.toolTip1.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -195,12 +183,13 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 449);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 365);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(531, 152);
+            this.dataGridView1.Size = new System.Drawing.Size(398, 124);
             this.dataGridView1.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
@@ -216,55 +205,40 @@
             // 
             this.btnMostrarTodos.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarTodos.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodos.Image")));
-            this.btnMostrarTodos.Location = new System.Drawing.Point(584, 300);
-            this.btnMostrarTodos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(438, 244);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
-            this.btnMostrarTodos.Size = new System.Drawing.Size(111, 96);
+            this.btnMostrarTodos.Size = new System.Drawing.Size(83, 78);
             this.btnMostrarTodos.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnMostrarTodos, "Mostrar Todos");
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
-            // btnAddPais
+            // lblCodCor
             // 
-            this.btnAddPais.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPais.Image")));
-            this.btnAddPais.Location = new System.Drawing.Point(665, 228);
-            this.btnAddPais.Name = "btnAddPais";
-            this.btnAddPais.Size = new System.Drawing.Size(42, 37);
-            this.btnAddPais.TabIndex = 15;
-            this.toolTip1.SetToolTip(this.btnAddPais, "Adicionar País");
-            this.btnAddPais.UseVisualStyleBackColor = true;
-            this.btnAddPais.Click += new System.EventHandler(this.btnAddPais_Click);
+            this.lblCodCor.AutoSize = true;
+            this.lblCodCor.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodCor.Location = new System.Drawing.Point(59, 188);
+            this.lblCodCor.Name = "lblCodCor";
+            this.lblCodCor.Size = new System.Drawing.Size(152, 25);
+            this.lblCodCor.TabIndex = 13;
+            this.lblCodCor.Text = "Código da Cor:";
             // 
-            // lblPais
+            // txtCodCor
             // 
-            this.lblPais.AutoSize = true;
-            this.lblPais.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPais.Location = new System.Drawing.Point(79, 232);
-            this.lblPais.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(80, 33);
-            this.lblPais.TabIndex = 13;
-            this.lblPais.Text = "País :";
+            this.txtCodCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodCor.Location = new System.Drawing.Point(217, 187);
+            this.txtCodCor.Name = "txtCodCor";
+            this.txtCodCor.Size = new System.Drawing.Size(278, 30);
+            this.txtCodCor.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.txtCodCor, "Digite aqui o códgo RGB, Hexa ou CMYK");
             // 
-            // cbbPais
+            // frmCorView
             // 
-            this.cbbPais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbbPais.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.cbbPais.FormattingEnabled = true;
-            this.cbbPais.Location = new System.Drawing.Point(193, 228);
-            this.cbbPais.Name = "cbbPais";
-            this.cbbPais.Size = new System.Drawing.Size(466, 37);
-            this.cbbPais.TabIndex = 14;
-            // 
-            // frmEstadoView
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 630);
-            this.Controls.Add(this.btnAddPais);
-            this.Controls.Add(this.cbbPais);
-            this.Controls.Add(this.lblPais);
+            this.ClientSize = new System.Drawing.Size(539, 512);
+            this.Controls.Add(this.txtCodCor);
+            this.Controls.Add(this.lblCodCor);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnLimpar);
@@ -272,18 +246,17 @@
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.lblMensagem);
-            this.Controls.Add(this.txtEstado);
-            this.Controls.Add(this.lblEstado);
+            this.Controls.Add(this.txtCor);
+            this.Controls.Add(this.lblCor);
             this.Controls.Add(this.btnLocalizar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnAdicionar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "frmEstadoView";
+            this.Name = "frmCorView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Estado";
+            this.Text = "Cor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -296,8 +269,8 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnLocalizar;
-        private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.Label lblCor;
+        private System.Windows.Forms.TextBox txtCor;
         private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnPesquisar;
@@ -307,8 +280,7 @@
         private System.Windows.Forms.Button btnMostrarTodos;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label lblPais;
-        private System.Windows.Forms.ComboBox cbbPais;
-        private System.Windows.Forms.Button btnAddPais;
+        private System.Windows.Forms.Label lblCodCor;
+        private System.Windows.Forms.TextBox txtCodCor;
     }
 }
