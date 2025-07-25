@@ -77,19 +77,19 @@ namespace Eventos.View
                     MessageBox.Show("A Descrição é obrigatória.");
                     return;
                 }
-                
+
                 if (string.IsNullOrEmpty(tamanho))
                 {
                     MessageBox.Show("O Tamanho é obrigatório.");
                     return;
                 }
-                
+
                 if (string.IsNullOrEmpty(aluguel))
                 {
                     MessageBox.Show("O Valor do Aluguel é obrigatório.");
                     return;
                 }
-                
+
                 if (string.IsNullOrEmpty(quantidade))
                 {
                     MessageBox.Show("A Quantidade é obrigatória.");
@@ -324,7 +324,7 @@ namespace Eventos.View
             try
             {
                 // Obtém os dados do banco de dados usando o EstadoDAO
-                DataTable dataTable = categoriaDAO.GetAll();
+                DataTable dataTable = corDAO.GetAll();
 
                 // Verifica se as colunas necessárias estão presentes
                 if (dataTable.Columns.Contains("Categoria") && dataTable.Columns.Contains("Id"))
@@ -344,7 +344,10 @@ namespace Eventos.View
             }
         }
 
-        // Aguardando criar as classes de cor
+        // aguardando criar as classes de cor
+        //paramos aqui
+
+        // Carrega dados no ComboBox
         private CorDAO corDAO = new CorDAO();
         private void CarregarCor()
         {
@@ -354,11 +357,12 @@ namespace Eventos.View
                 DataTable dataTable = corDAO.GetAll();
 
                 // Verifica se as colunas necessárias estão presentes
-                if (dataTable.Columns.Contains("Cor") && dataTable.Columns.Contains("Id"))
+                if (dataTable.Columns.Contains("Cor") && dataTable.Columns.Contains("Id") && dataTable.Columns.Contains("Cod_Cor"))
                 {
                     cbbCor.DataSource = dataTable;
-                    cbbCor.DisplayMember = "Categoria";
+                    cbbCor.DisplayMember = "Cor";
                     cbbCor.ValueMember = "Id";
+                    cbbCor.DisplayMember = "Cod_Cor";
                 }
                 else
                 {
@@ -370,6 +374,7 @@ namespace Eventos.View
                 MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
             }
         }
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -440,8 +445,8 @@ namespace Eventos.View
 
         private void btnAddCor_Click(object sender, EventArgs e)
         {
-            frmCorView add = new frmCorView();
-            add.ShowDialog();
+            //frmCorView add = new frmCorView();
+            //add.ShowDialog();
         }
     }
 }

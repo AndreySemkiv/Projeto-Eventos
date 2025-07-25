@@ -45,8 +45,8 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblCodCor = new System.Windows.Forms.Label();
             this.txtCodCor = new System.Windows.Forms.TextBox();
+            this.lblCodCor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,7 +184,7 @@
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(27, 365);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -213,6 +213,15 @@
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
+            // txtCodCor
+            // 
+            this.txtCodCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodCor.Location = new System.Drawing.Point(217, 187);
+            this.txtCodCor.Name = "txtCodCor";
+            this.txtCodCor.Size = new System.Drawing.Size(278, 30);
+            this.txtCodCor.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.txtCodCor, "Digite aqui o códgo RGB, Hexa ou CMYK");
+            // 
             // lblCodCor
             // 
             this.lblCodCor.AutoSize = true;
@@ -222,15 +231,6 @@
             this.lblCodCor.Size = new System.Drawing.Size(152, 25);
             this.lblCodCor.TabIndex = 13;
             this.lblCodCor.Text = "Código da Cor:";
-            // 
-            // txtCodCor
-            // 
-            this.txtCodCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodCor.Location = new System.Drawing.Point(217, 187);
-            this.txtCodCor.Name = "txtCodCor";
-            this.txtCodCor.Size = new System.Drawing.Size(278, 30);
-            this.txtCodCor.TabIndex = 14;
-            this.toolTip1.SetToolTip(this.txtCodCor, "Digite aqui o códgo RGB, Hexa ou CMYK");
             // 
             // frmCorView
             // 
