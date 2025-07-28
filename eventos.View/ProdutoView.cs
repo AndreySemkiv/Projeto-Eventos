@@ -46,6 +46,8 @@ namespace Eventos.View
             txtQuantidade.Enabled = true;
             txtCusto.Enabled = true;
             cbbCategoria.Enabled = true;
+            CarregarCategoria();
+            CarregarCor();
             cbbCor.Enabled = true;
             cbbTema.Enabled = true;
         }
@@ -353,7 +355,7 @@ namespace Eventos.View
         {
             try
             {
-                // Obtém os dados do banco de dados usando o EstadoDAO
+                // Obtém os dados do banco de dados usando o corDAO
                 DataTable dataTable = corDAO.GetAll();
 
                 // Verifica se as colunas necessárias estão presentes
@@ -445,8 +447,8 @@ namespace Eventos.View
 
         private void btnAddCor_Click(object sender, EventArgs e)
         {
-            //frmCorView add = new frmCorView();
-            //add.ShowDialog();
+            frmCorView add = new frmCorView();
+            add.ShowDialog();
         }
     }
 }

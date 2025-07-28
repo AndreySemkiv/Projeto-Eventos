@@ -106,7 +106,7 @@ namespace Eventos.DAO
                         {
                             IdCor = reader.GetInt32("Id"),
                             CorNome = reader.GetString("Cor"),
-                            CodCor = reader.GetString("Cod_RGB")
+                            CodCor = reader.GetString("Cod_Cor")
                         };
                     }
                 }
