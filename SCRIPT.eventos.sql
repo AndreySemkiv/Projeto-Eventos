@@ -1,0 +1,151 @@
+-- Geração de Modelo físico
+-- Sql ANSI 2003 - brModelo.
+
+-- DROP DATABASE `eventos`;
+
+CREATE DATABASE IF NOT EXISTS `eventos`;
+
+USE `eventos`;
+
+CREATE TABLE IF NOT EXISTS `eventos`.`rua` (
+id_rua INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+rua_nome VARCHAR(50) NOT NULL,
+cep_rua VARCHAR(15) NOT NULL,
+id_bairro INTEGER(14) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`produto` (
+id_produto INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+descricao VARCHAR(50) NOT NULL,
+tamanho VARCHAR(50) NOT NULL,
+quantidade DOUBLE PRECISION NOT NULL,
+valor DOUBLE PRECISION NOT NULL,
+custo DOUBLE PRECISION NOT NULL,
+id_categoria INTEGER(14) NOT NULL,
+id_tema INTEGER(14) NOT NULL,
+id_cor INTEGER(14) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`cor` (
+id_cor INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+cod_rgb_hexa_cmyk VARCHAR(15),
+cor_nome VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`tema` (
+id_tema INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+tema_nome VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`categoria` (
+id_categoria INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+categoria_nome VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`receber` (
+id_receber INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+data_emissao DATE NOT NULL,
+valor_total DOUBLE PRECISION NOT NULL,
+id_agendamento INTEGER(14) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`estado` (
+id_estado INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+estado_nome VARCHAR(50) NOT NULL,
+id_pais INTEGER(14) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`pais` (
+id_pais INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+pais_nome VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`cidade` (
+id_cidade INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+cidade_nome VARCHAR(50) NOT NULL,
+id_estado INTEGER(14) NOT NULL,
+FOREIGN KEY(id_estado) REFERENCES estado (id_estado) ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`bairro` (
+id_bairro INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+bairro_nome VARCHAR(50) NOT NULL,
+id_cidade INTEGER(14) NOT NULL,
+FOREIGN KEY(id_cidade) REFERENCES cidade (id_cidade) ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`parcelamento` (
+id_parcela INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+tipo_pagamento VARCHAR(50) NOT NULL,
+data_pagamento DATE,
+valor DOUBLE PRECISION NOT NULL,
+vencimento DATE NOT NULL,
+parcela VARCHAR(50) NOT NULL,
+id_receber INTEGER(14) NOT NULL,
+FOREIGN KEY(id_receber) REFERENCES receber (id_receber) ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`orcamento` (
+id_orcamento INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+tipo_evento VARCHAR(50) NOT NULL,
+total DOUBLE PRECISION NOT NULL,
+data_emissao DATE NOT NULL,
+aprovacao ENUM('Aprovado', 'Aguardando', 'Vencido', 'Reprovado', 'Cancelado') DEFAULT 'Aguardando',
+local_evento VARCHAR(50) NOT NULL,
+data_evento DATE NOT NULL,
+hora_evento VARCHAR(15) NOT NULL,
+tema VARCHAR(50) NOT NULL,
+validade VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`agendamento` (
+id_agendamento INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+data_emissao DATE NOT NULL,
+data_evento DATE NOT NULL,
+hora_evento VARCHAR(15) NOT NULL,
+total DOUBLE PRECISION NOT NULL,
+local_evento VARCHAR(50) NOT NULL,
+tipo_evento VARCHAR(50) NOT NULL,
+tema VARCHAR(50) NOT NULL,
+id_cliente INTEGER(14) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`cliente` (
+id_cliente INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL,
+cpf VARCHAR(15) NOT NULL,
+email VARCHAR(50),
+celular VARCHAR(18) NOT NULL,
+cep VARCHAR(15) NOT NULL,
+num_residencia INTEGER(5) NOT NULL,
+id_rua INTEGER(14) NOT NULL,
+FOREIGN KEY(id_rua) REFERENCES rua (id_rua) ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`itens_orcamento` (
+id_itens INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+quantidade DOUBLE PRECISION NOT NULL,
+subtotal DOUBLE PRECISION NOT NULL,
+id_orcamento INTEGER(14) NOT NULL,
+id_produto INTEGER(14) NOT NULL,
+FOREIGN KEY(id_orcamento) REFERENCES orcamento (id_orcamento) ON DELETE RESTRICT,
+FOREIGN KEY(id_produto) REFERENCES produto (id_produto) ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS `eventos`.`itens_agendamento` (
+id_itens INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+quantidade DOUBLE PRECISION NOT NULL,
+subtotal DOUBLE PRECISION NOT NULL,
+id_produto INTEGER(14) NOT NULL,
+id_agendamento INTEGER(14) NOT NULL,
+FOREIGN KEY(id_produto) REFERENCES produto (id_produto) ON DELETE RESTRICT,
+FOREIGN KEY(id_agendamento) REFERENCES agendamento (id_agendamento) ON DELETE RESTRICT
+);
+
+ALTER TABLE rua ADD FOREIGN KEY(id_bairro) REFERENCES bairro (id_bairro) ON DELETE RESTRICT;
+ALTER TABLE produto ADD FOREIGN KEY(id_categoria) REFERENCES categoria (id_categoria) ON DELETE RESTRICT;
+ALTER TABLE produto ADD FOREIGN KEY(id_tema) REFERENCES tema (id_tema) ON DELETE RESTRICT;
+ALTER TABLE produto ADD FOREIGN KEY(id_cor) REFERENCES cor (id_cor) ON DELETE RESTRICT;
+ALTER TABLE receber ADD FOREIGN KEY(id_agendamento) REFERENCES agendamento (id_agendamento) ON DELETE RESTRICT;
+ALTER TABLE estado ADD FOREIGN KEY(id_pais) REFERENCES pais (id_pais) ON DELETE RESTRICT;
+ALTER TABLE agendamento ADD FOREIGN KEY(id_cliente) REFERENCES cliente (id_cliente) ON DELETE RESTRICT;
