@@ -47,6 +47,7 @@ namespace Eventos.View
             txtCusto.Enabled = true;
             cbbCategoria.Enabled = true;
             CarregarCategoria();
+            CarregarTema();
             CarregarCor();
             cbbCor.Enabled = true;
             cbbTema.Enabled = true;
@@ -376,6 +377,33 @@ namespace Eventos.View
                 MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
             }
         }
+
+        // Carrega dados no ComboBox Tema
+        private TemaDAO temaDAO = new TemaDAO();
+        private void CarregarTema()
+        {
+            try
+            {
+                // Obtém os dados do banco de dados usando o EstadoDAO
+                DataTable dataTable = temaDAO.GetAll();
+
+                // Verifica se as colunas necessárias estão presentes
+                if (dataTable.Columns.Contains("Tema") && dataTable.Columns.Contains("Id"))
+                {
+                    cbbTema.DataSource = dataTable;
+                    cbbTema.DisplayMember = "Tema";
+                    cbbTema.ValueMember = "Id";
+                }
+                else
+                {
+                    MessageBox.Show("Não Localizado!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
+            }
+        }
         /*parado aqui para ajustes
         //Carrega dados no combobox
         private CidadeDAO cidadeDAO = new CidadeDAO();
@@ -436,9 +464,9 @@ namespace Eventos.View
                 // Obter a descrição do produto e carregar no TextBox
                 string descricao = dataGridView1.SelectedRows[0].Cells["Descrição"].Value.ToString();
                 string tamanho = dataGridView1.SelectedRows[0].Cells["Tamanho"].Value.ToString();
-                string valor = dataGridView1.SelectedRows[0].Cells["R$ Aluguel"].Value.ToString();
+                string valor = dataGridView1.SelectedRows[0].Cells["R$_Aluguel"].Value.ToString();
                 string quantidade = dataGridView1.SelectedRows[0].Cells["Quantidade"].Value.ToString();
-                string custo = dataGridView1.SelectedRows[0].Cells["R$ Custo"].Value.ToString();
+                string custo = dataGridView1.SelectedRows[0].Cells["R$_Custo"].Value.ToString();
                 string categoria = dataGridView1.SelectedRows[0].Cells["Categoria"].Value.ToString();
                 string cor = dataGridView1.SelectedRows[0].Cells["Cor"].Value.ToString();
                 string tema = dataGridView1.SelectedRows[0].Cells["Tema"].Value.ToString();

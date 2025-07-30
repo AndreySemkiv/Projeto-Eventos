@@ -29,7 +29,7 @@ namespace Eventos.DAO
                 string query = "SELECT produto.id_produto AS Id, \r\n" +
                     "   produto.descricao AS Descrição, \r\n" +
                     "   produto.tamanho AS Tamanho, \r\n" +
-                    "   produto.quantidade AS Quant, \r\n" +
+                    "   produto.quantidade AS Quantidade, \r\n" +
                     "   produto.valor AS R$_Aluguel, \r\n" +
                     "   produto.custo AS R$_Custo, \r\n" +
                     "   cor.cor_nome AS Cor, \r\n" +
@@ -65,7 +65,7 @@ namespace Eventos.DAO
             string query = "SELECT produto.id_produto AS Id, \r\n" +
                     "   produto.descricao AS Descrição, \r\n" +
                     "   produto.tamanho AS Tamanho, \r\n" +
-                    "   produto.quantidade AS Quant, \r\n" +
+                    "   produto.quantidade AS Quantidade, \r\n" +
                     "   produto.valor AS R$_Aluguel, \r\n" +
                     "   produto.custo AS R$_Custo, \r\n" +
                     "   cor.cor_nome AS Cor, \r\n" +
@@ -114,7 +114,7 @@ namespace Eventos.DAO
                 string query = "SELECT produto.id_produto AS Id, \r\n" +
                     "   produto.descricao AS Descrição, \r\n" +
                     "   produto.tamanho AS Tamanho, \r\n" +
-                    "   produto.quantidade AS Quant, \r\n" +
+                    "   produto.quantidade AS Quantidade, \r\n" +
                     "   produto.valor AS R$_Aluguel, \r\n" +
                     "   produto.custo AS R$_Custo, \r\n" +
                     "   cor.cor_nome AS Cor, \r\n" +
@@ -151,7 +151,7 @@ namespace Eventos.DAO
                             TemaNome = reader.GetString("Tema"),
                             CorNome = reader.GetString("Cor"),
                             Cod_rgb_hexa_cmyk = reader.GetString("Cod_Cor"),
-                            Quantidade = reader.GetDouble("Quant"),
+                            Quantidade = reader.GetDouble("Quantidade"),
                             Custo = reader.GetDouble("R$_Custo"),
                             Valor = reader.GetDouble("R$_Aluguel")
                         };
