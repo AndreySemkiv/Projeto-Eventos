@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\eventos.DAO",
-    "\\eventos.Model",
-    "\\eventos.View"
+    ""
   ],
-  "SelectedNode": "\\eventos.Model\\CorModel.cs",
+  "SelectedNode": "\\Eventos.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -14,7 +14,7 @@ namespace Eventos.Control
     {
         private CorDAO corDAO = new CorDAO();
 
-        public DataTable GetAllCors()
+        public DataTable GetAllCores()
         {
             return corDAO.GetAll();
         }
@@ -24,9 +24,9 @@ namespace Eventos.Control
             return corDAO.GetCorAsDataTable(cod_cor);
         }
 
-        public Cor GetCorByCor(string nome)
+        public Cor GetCorByCor(string cod_cor)
         {
-            return corDAO.GetByCor(nome);
+            return corDAO.GetByCor(cod_cor);
         }
 
         public void AddCor(Cor cor)

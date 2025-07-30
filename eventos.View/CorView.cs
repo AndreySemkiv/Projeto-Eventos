@@ -84,7 +84,7 @@ namespace Eventos.View
                     };
 
                     corDAO.Add(novaCor);
-                    MessageBox.Show("Cor salvo com sucesso!");
+                    MessageBox.Show("Cor salva com sucesso!");
                 }
 
                 // Limpar o TextBox
@@ -114,7 +114,7 @@ namespace Eventos.View
 
                 if (string.IsNullOrEmpty(cod_cor))
                 {
-                    MessageBox.Show("O código é obrigatório.");
+                    MessageBox.Show("O Código é obrigatório.");
                     return;
                 }
 
@@ -129,7 +129,7 @@ namespace Eventos.View
                     };
 
                     corDAO.Delete(corAtualizado);
-                    MessageBox.Show("Cor Excluído com sucesso!");
+                    MessageBox.Show("Cor Excluída com sucesso!");
 
                     // Limpar o TextBox
                     txtCor.Text = string.Empty;
@@ -157,7 +157,7 @@ namespace Eventos.View
 
                 if (string.IsNullOrEmpty(cod_cor))
                 {
-                    MessageBox.Show("O código é obrigatório.");
+                    MessageBox.Show("A Código é obrigatório.");
                     return;
                 }
 
@@ -165,13 +165,13 @@ namespace Eventos.View
 
                 if (cor != null)
                 {
-                    // Se o cor for encontrado, mostrar os dados no DataGridView
+                    // Se a cor for encontrada, mostrar os dados no DataGridView
                     DataTable dataTable = corDAO.GetCorAsDataTable(cod_cor);
                     dataGridView1.DataSource = dataTable;
                 }
                 else
                 {
-                    MessageBox.Show("Cor não encontrado.");
+                    MessageBox.Show("Cor não encontrada.");
                 }
 
                 txtCor.Text = string.Empty;
@@ -214,6 +214,7 @@ namespace Eventos.View
             }
         }
 
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -225,7 +226,7 @@ namespace Eventos.View
                 string descricao = dataGridView1.SelectedRows[0].Cells["Cor"].Value.ToString();
                 txtCor.Text = descricao;
 
-                // Obter o código da cor
+                // Obter o Código da cor
                 txtCodCor.Text = dataGridView1.SelectedRows[0].Cells["Cod_Cor"].Value.ToString();
 
                 txtCor.Enabled = true;
@@ -234,7 +235,7 @@ namespace Eventos.View
             }
             else
             {
-                MessageBox.Show("Selecione uma cor para editar.");
+                MessageBox.Show("Selecione um cor para editar.");
             }
         }
 

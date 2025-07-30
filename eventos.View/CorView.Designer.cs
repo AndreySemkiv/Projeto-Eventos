@@ -114,9 +114,9 @@
             // txtCor
             // 
             this.txtCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCor.Location = new System.Drawing.Point(145, 146);
+            this.txtCor.Location = new System.Drawing.Point(128, 146);
             this.txtCor.Name = "txtCor";
-            this.txtCor.Size = new System.Drawing.Size(350, 30);
+            this.txtCor.Size = new System.Drawing.Size(367, 30);
             this.txtCor.TabIndex = 5;
             this.toolTip1.SetToolTip(this.txtCor, "Digite aqui o nome da Cor");
             // 

@@ -79,19 +79,19 @@ namespace Eventos.View
                     MessageBox.Show("A Descrição é obrigatória.");
                     return;
                 }
-
+                
                 if (string.IsNullOrEmpty(tamanho))
                 {
                     MessageBox.Show("O Tamanho é obrigatório.");
                     return;
                 }
-
+                
                 if (string.IsNullOrEmpty(aluguel))
                 {
                     MessageBox.Show("O Valor do Aluguel é obrigatório.");
                     return;
                 }
-
+                
                 if (string.IsNullOrEmpty(quantidade))
                 {
                     MessageBox.Show("A Quantidade é obrigatória.");
@@ -320,42 +320,12 @@ namespace Eventos.View
         }
 
         // Carrega dados no ComboBox
-        private CategoriaDAO categoriaDAO = new CategoriaDAO();
-        private void CarregarCategoria()
-        {
-            try
-            {
-                // Obtém os dados do banco de dados usando o EstadoDAO
-                DataTable dataTable = corDAO.GetAll();
-
-                // Verifica se as colunas necessárias estão presentes
-                if (dataTable.Columns.Contains("Categoria") && dataTable.Columns.Contains("Id"))
-                {
-                    cbbCategoria.DataSource = dataTable;
-                    cbbCategoria.DisplayMember = "Categoria";
-                    cbbCategoria.ValueMember = "Id";
-                }
-                else
-                {
-                    MessageBox.Show("Não Localizado!!!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
-            }
-        }
-
-        // aguardando criar as classes de cor
-        //paramos aqui
-
-        // Carrega dados no ComboBox
         private CorDAO corDAO = new CorDAO();
         private void CarregarCor()
         {
             try
             {
-                // Obtém os dados do banco de dados usando o corDAO
+                // Obtém os dados do banco de dados usando o CorDAO
                 DataTable dataTable = corDAO.GetAll();
 
                 // Verifica se as colunas necessárias estão presentes
@@ -377,6 +347,84 @@ namespace Eventos.View
             }
         }
 
+        // aguardando criar as classes de cor
+        //paramos aqui
+
+        // Carrega dados no ComboBox
+        private CategoriaDAO categoriaDAO = new CategoriaDAO();
+        private void CarregarCategoria()
+        {
+            try
+            {
+                // Obtém os dados do banco de dados usando o EstadoDAO
+                DataTable dataTable = categoriaDAO.GetAll();
+
+                // Verifica se as colunas necessárias estão presentes
+                if (dataTable.Columns.Contains("Categoria") && dataTable.Columns.Contains("Id"))
+                {
+                    cbbCategoria.DataSource = dataTable;
+                    cbbCategoria.DisplayMember = "Categoria";
+                    cbbCategoria.ValueMember = "Id";
+                }
+                else
+                {
+                    MessageBox.Show("Não Localizado!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
+            }
+        }
+        /*parado aqui para ajustes
+        //Carrega dados no combobox
+        private CidadeDAO cidadeDAO = new CidadeDAO();
+        public void CarregarCidade()
+        {
+            try
+            {
+                // Obtém os dados do banco de dados usando o CidadeDAO
+                DataTable dataTable = cidadeDAO.GetAll();
+
+                // Verifica se as colunas necessárias estão presentes
+                if (!dataTable.Columns.Contains("Cidade") || !dataTable.Columns.Contains("Id") || !dataTable.Columns.Contains("Estado"))
+                {
+                    MessageBox.Show("Não foram encontrados os dados de cidade e estado!");
+                    return;
+                }
+
+                // Cria uma lista de objetos CidadeEstado a partir do DataTable
+                List<CidadeEstado> listaDeCidades = new List<CidadeEstado>();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    // Obtém os valores das colunas Cidade, Id e Estado
+                    int IdCidade = Convert.ToInt32(row["Id"]);
+                    string Cidade_nome = row["Cidade"].ToString();
+                    string Estado_nome = row["Estado"].ToString();
+
+                    // Adiciona o objeto CidadeEstado à lista
+                    listaDeCidades.Add(new CidadeEstado(IdCidade, Cidade_nome, Estado_nome));
+                }
+
+                // Limpa os itens anteriores do ComboBox e define a nova fonte de dados
+                cbbCidade.DataSource = null;
+                cbbCidade.Items.Clear();
+
+                // Define a fonte de dados do ComboBox, exibindo o cidade e estado com o id como valor
+                cbbCidade.DataSource = listaDeCidades;
+                cbbCidade.DisplayMember = "CidadeEstadoConcatenado";  // Exibirá o nome do cidade e do Estado no ComboBox
+                cbbCidade.ValueMember = "IdCidade";       // Associará o IdCidade como valor
+
+                // Acessa o id_cidade selecionado diretamente pelo SelectedValue
+                int cidadeSelecionado = Convert.ToInt32(cbbCidade.SelectedValue);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
+            }
+        }
+
+        */
 
         private void btnEditar_Click(object sender, EventArgs e)
         {

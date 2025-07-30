@@ -92,7 +92,7 @@ namespace Eventos.DAO
                     "   cor \r\n" +
                     "WHERE \r\n" +
                     "   cod_rgb_hexa_cmyk \r\n" +
-                    "LIKE CONCAT('%',@cor_nome,'%')";
+                    "LIKE CONCAT('%',@cod_rgb_hexa_cmyk,'%')";
                 
                 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -127,7 +127,7 @@ namespace Eventos.DAO
                     "cor \r\n" +
                         "(cor_nome, cod_rgb_hexa_cmyk) \r\n" +
                     "VALUES \r\n" +
-                        "(@cor_nome, @cod_rgb_hexa_cmyk))";
+                        "(@cor_nome, @cod_rgb_hexa_cmyk)";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@cor_nome", cor.CorNome);
