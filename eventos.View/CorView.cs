@@ -26,6 +26,8 @@ namespace Eventos.View
             InitializeComponent();
             txtCor.Enabled = false;
             txtCodCor.Enabled = false;
+            panel1.Enabled = false;
+            btnmudarcor.Enabled = false;
             CarregarDados();
 
         }
@@ -34,6 +36,8 @@ namespace Eventos.View
         {
             txtCor.Enabled = true;
             txtCodCor.Enabled = true;
+            panel1.Enabled = true;
+            btnmudarcor.Enabled = true;
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)
@@ -242,6 +246,22 @@ namespace Eventos.View
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             CarregarDados();
+        }
+
+        private void btnmudarcor_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            cd.AllowFullOpen = true;
+            cd.Color = panel1.BackColor;
+            cd.FullOpen = true;
+            cd.AnyColor = true;
+            if(cd.ShowDialog() == DialogResult.OK)
+            {
+                panel1.BackColor = cd.Color;
+
+                // Mostra o código hexadecimal da cor no TextBox CodCor
+                txtCodCor.Text = $"#{cd.Color.R:X2}{cd.Color.G:X2}{cd.Color.B:X2}";
+            }
         }
     }
 }

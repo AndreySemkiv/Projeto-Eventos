@@ -47,6 +47,8 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtCodCor = new System.Windows.Forms.TextBox();
             this.lblCodCor = new System.Windows.Forms.Label();
+            this.btnmudarcor = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,16 +109,16 @@
             this.lblCor.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCor.Location = new System.Drawing.Point(59, 147);
             this.lblCor.Name = "lblCor";
-            this.lblCor.Size = new System.Drawing.Size(51, 25);
+            this.lblCor.Size = new System.Drawing.Size(142, 25);
             this.lblCor.TabIndex = 4;
-            this.lblCor.Text = "Cor:";
+            this.lblCor.Text = "Nome da Cor:";
             // 
             // txtCor
             // 
             this.txtCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCor.Location = new System.Drawing.Point(128, 146);
+            this.txtCor.Location = new System.Drawing.Point(207, 146);
             this.txtCor.Name = "txtCor";
-            this.txtCor.Size = new System.Drawing.Size(367, 30);
+            this.txtCor.Size = new System.Drawing.Size(288, 30);
             this.txtCor.TabIndex = 5;
             this.toolTip1.SetToolTip(this.txtCor, "Digite aqui o nome da Cor");
             // 
@@ -145,7 +147,7 @@
             // 
             this.btnPesquisar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
-            this.btnPesquisar.Location = new System.Drawing.Point(61, 244);
+            this.btnPesquisar.Location = new System.Drawing.Point(61, 271);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(83, 78);
             this.btnPesquisar.TabIndex = 8;
@@ -169,7 +171,7 @@
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
-            this.btnLimpar.Location = new System.Drawing.Point(252, 244);
+            this.btnLimpar.Location = new System.Drawing.Point(252, 271);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(83, 78);
             this.btnLimpar.TabIndex = 10;
@@ -205,7 +207,7 @@
             // 
             this.btnMostrarTodos.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarTodos.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodos.Image")));
-            this.btnMostrarTodos.Location = new System.Drawing.Point(438, 244);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(438, 271);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(83, 78);
             this.btnMostrarTodos.TabIndex = 12;
@@ -216,7 +218,7 @@
             // txtCodCor
             // 
             this.txtCodCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodCor.Location = new System.Drawing.Point(217, 187);
+            this.txtCodCor.Location = new System.Drawing.Point(217, 225);
             this.txtCodCor.Name = "txtCodCor";
             this.txtCodCor.Size = new System.Drawing.Size(278, 30);
             this.txtCodCor.TabIndex = 14;
@@ -226,17 +228,39 @@
             // 
             this.lblCodCor.AutoSize = true;
             this.lblCodCor.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodCor.Location = new System.Drawing.Point(59, 188);
+            this.lblCodCor.Location = new System.Drawing.Point(59, 226);
             this.lblCodCor.Name = "lblCodCor";
             this.lblCodCor.Size = new System.Drawing.Size(152, 25);
             this.lblCodCor.TabIndex = 13;
             this.lblCodCor.Text = "Código da Cor:";
+            // 
+            // btnmudarcor
+            // 
+            this.btnmudarcor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnmudarcor.Location = new System.Drawing.Point(189, 191);
+            this.btnmudarcor.Name = "btnmudarcor";
+            this.btnmudarcor.Size = new System.Drawing.Size(224, 26);
+            this.btnmudarcor.TabIndex = 15;
+            this.btnmudarcor.Text = "Inserir Cor";
+            this.btnmudarcor.UseVisualStyleBackColor = true;
+            this.btnmudarcor.Click += new System.EventHandler(this.btnmudarcor_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(64, 191);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(119, 26);
+            this.panel1.TabIndex = 16;
             // 
             // frmCorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 512);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnmudarcor);
             this.Controls.Add(this.txtCodCor);
             this.Controls.Add(this.lblCodCor);
             this.Controls.Add(this.btnMostrarTodos);
@@ -282,5 +306,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lblCodCor;
         private System.Windows.Forms.TextBox txtCodCor;
+        private System.Windows.Forms.Button btnmudarcor;
+        private System.Windows.Forms.Panel panel1;
     }
 }
