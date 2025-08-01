@@ -35,7 +35,6 @@ namespace Eventos.View
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             txtCor.Enabled = true;
-            txtCodCor.Enabled = true;
             panel1.Enabled = true;
             btnmudarcor.Enabled = true;
         }
