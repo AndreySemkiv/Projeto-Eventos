@@ -71,9 +71,9 @@
             this.btnAdicionar.AccessibleName = "";
             this.btnAdicionar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
-            this.btnAdicionar.Location = new System.Drawing.Point(13, 11);
+            this.btnAdicionar.Location = new System.Drawing.Point(9, 11);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(83, 78);
+            this.btnAdicionar.Size = new System.Drawing.Size(87, 78);
             this.btnAdicionar.TabIndex = 0;
             this.btnAdicionar.Tag = "";
             this.toolTip1.SetToolTip(this.btnAdicionar, "Adicionar");
@@ -84,9 +84,9 @@
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(370, 12);
+            this.btnSalvar.Location = new System.Drawing.Point(366, 12);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(83, 78);
+            this.btnSalvar.Size = new System.Drawing.Size(87, 78);
             this.btnSalvar.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnSalvar, "Salvar");
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -96,9 +96,9 @@
             // 
             this.btnEditar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(280, 11);
+            this.btnEditar.Location = new System.Drawing.Point(276, 11);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(83, 78);
+            this.btnEditar.Size = new System.Drawing.Size(87, 78);
             this.btnEditar.TabIndex = 2;
             this.toolTip1.SetToolTip(this.btnEditar, "Editar");
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -108,9 +108,9 @@
             // 
             this.btnLocalizar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
-            this.btnLocalizar.Location = new System.Drawing.Point(102, 11);
+            this.btnLocalizar.Location = new System.Drawing.Point(98, 11);
             this.btnLocalizar.Name = "btnLocalizar";
-            this.btnLocalizar.Size = new System.Drawing.Size(83, 78);
+            this.btnLocalizar.Size = new System.Drawing.Size(87, 78);
             this.btnLocalizar.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btnLocalizar, "Localizar");
             this.btnLocalizar.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             this.lblProduto.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduto.Location = new System.Drawing.Point(8, 104);
             this.lblProduto.Name = "lblProduto";
-            this.lblProduto.Size = new System.Drawing.Size(242, 28);
+            this.lblProduto.Size = new System.Drawing.Size(201, 23);
             this.lblProduto.TabIndex = 4;
             this.lblProduto.Text = "Descrição do Produto :";
             this.lblProduto.UseMnemonic = false;
@@ -132,7 +132,7 @@
             this.txtProduto.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProduto.Location = new System.Drawing.Point(246, 102);
             this.txtProduto.Name = "txtProduto";
-            this.txtProduto.Size = new System.Drawing.Size(562, 36);
+            this.txtProduto.Size = new System.Drawing.Size(562, 30);
             this.txtProduto.TabIndex = 5;
             this.toolTip1.SetToolTip(this.txtProduto, "Digite a Descrição do Protudo");
             // 
@@ -142,7 +142,7 @@
             this.lblMensagem.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensagem.Location = new System.Drawing.Point(314, 326);
             this.lblMensagem.Name = "lblMensagem";
-            this.lblMensagem.Size = new System.Drawing.Size(0, 29);
+            this.lblMensagem.Size = new System.Drawing.Size(0, 23);
             this.lblMensagem.TabIndex = 6;
             // 
             // btnExcluir
@@ -161,9 +161,9 @@
             // 
             this.btnPesquisar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
-            this.btnPesquisar.Location = new System.Drawing.Point(191, 11);
+            this.btnPesquisar.Location = new System.Drawing.Point(187, 11);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(83, 78);
+            this.btnPesquisar.Size = new System.Drawing.Size(87, 78);
             this.btnPesquisar.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btnPesquisar, "Pesquisar");
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -246,7 +246,7 @@
             this.txtTamanho.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTamanho.Location = new System.Drawing.Point(134, 145);
             this.txtTamanho.Name = "txtTamanho";
-            this.txtTamanho.Size = new System.Drawing.Size(421, 36);
+            this.txtTamanho.Size = new System.Drawing.Size(421, 30);
             this.txtTamanho.TabIndex = 19;
             this.toolTip1.SetToolTip(this.txtTamanho, "Digite aqui o Tamanho");
             // 
@@ -255,7 +255,7 @@
             this.txtQuantidade.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantidade.Location = new System.Drawing.Point(448, 185);
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(97, 36);
+            this.txtQuantidade.Size = new System.Drawing.Size(97, 30);
             this.txtQuantidade.TabIndex = 27;
             this.toolTip1.SetToolTip(this.txtQuantidade, "Digite a Quantidade");
             // 
@@ -264,7 +264,7 @@
             this.txtAluguel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAluguel.Location = new System.Drawing.Point(680, 184);
             this.txtAluguel.Name = "txtAluguel";
-            this.txtAluguel.Size = new System.Drawing.Size(128, 36);
+            this.txtAluguel.Size = new System.Drawing.Size(128, 30);
             this.txtAluguel.TabIndex = 25;
             this.toolTip1.SetToolTip(this.txtAluguel, "Informe o Valor Unitário do Aluguel");
             // 
@@ -273,7 +273,7 @@
             this.txtCusto.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCusto.Location = new System.Drawing.Point(642, 146);
             this.txtCusto.Name = "txtCusto";
-            this.txtCusto.Size = new System.Drawing.Size(166, 36);
+            this.txtCusto.Size = new System.Drawing.Size(166, 30);
             this.txtCusto.TabIndex = 32;
             this.toolTip1.SetToolTip(this.txtCusto, "Informe o Custo Unitário do Produto");
             // 
@@ -307,7 +307,7 @@
             this.cbbTema.FormattingEnabled = true;
             this.cbbTema.Location = new System.Drawing.Point(448, 232);
             this.cbbTema.Name = "cbbTema";
-            this.cbbTema.Size = new System.Drawing.Size(316, 37);
+            this.cbbTema.Size = new System.Drawing.Size(316, 31);
             this.cbbTema.TabIndex = 40;
             this.toolTip1.SetToolTip(this.cbbTema, "Selecione o Tema");
             // 
@@ -317,7 +317,7 @@
             this.cbbCor.FormattingEnabled = true;
             this.cbbCor.Location = new System.Drawing.Point(66, 232);
             this.cbbCor.Name = "cbbCor";
-            this.cbbCor.Size = new System.Drawing.Size(248, 37);
+            this.cbbCor.Size = new System.Drawing.Size(248, 31);
             this.cbbCor.TabIndex = 41;
             this.toolTip1.SetToolTip(this.cbbCor, "Selecione a Cor");
             // 
@@ -327,7 +327,7 @@
             this.cbbCategoria.FormattingEnabled = true;
             this.cbbCategoria.Location = new System.Drawing.Point(66, 185);
             this.cbbCategoria.Name = "cbbCategoria";
-            this.cbbCategoria.Size = new System.Drawing.Size(208, 37);
+            this.cbbCategoria.Size = new System.Drawing.Size(208, 31);
             this.cbbCategoria.TabIndex = 42;
             this.toolTip1.SetToolTip(this.cbbCategoria, "Selecione a Categoria");
             // 
@@ -337,7 +337,7 @@
             this.lblTamanho.Font = new System.Drawing.Font("Tahoma", 13.8F);
             this.lblTamanho.Location = new System.Drawing.Point(12, 147);
             this.lblTamanho.Name = "lblTamanho";
-            this.lblTamanho.Size = new System.Drawing.Size(121, 28);
+            this.lblTamanho.Size = new System.Drawing.Size(102, 23);
             this.lblTamanho.TabIndex = 18;
             this.lblTamanho.Text = "Tamanho :";
             // 
@@ -347,7 +347,7 @@
             this.lblAluguel.Font = new System.Drawing.Font("Tahoma", 13.8F);
             this.lblAluguel.Location = new System.Drawing.Point(551, 186);
             this.lblAluguel.Name = "lblAluguel";
-            this.lblAluguel.Size = new System.Drawing.Size(136, 28);
+            this.lblAluguel.Size = new System.Drawing.Size(113, 23);
             this.lblAluguel.TabIndex = 24;
             this.lblAluguel.Text = "R$ Aluguel :";
             // 
@@ -357,7 +357,7 @@
             this.lblQuantidade.Font = new System.Drawing.Font("Tahoma", 13.8F);
             this.lblQuantidade.Location = new System.Drawing.Point(319, 186);
             this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(144, 28);
+            this.lblQuantidade.Size = new System.Drawing.Size(120, 23);
             this.lblQuantidade.TabIndex = 26;
             this.lblQuantidade.Text = "Quantidade :";
             // 
@@ -367,7 +367,7 @@
             this.lblCusto.Font = new System.Drawing.Font("Tahoma", 13.8F);
             this.lblCusto.Location = new System.Drawing.Point(561, 147);
             this.lblCusto.Name = "lblCusto";
-            this.lblCusto.Size = new System.Drawing.Size(84, 28);
+            this.lblCusto.Size = new System.Drawing.Size(69, 23);
             this.lblCusto.TabIndex = 31;
             this.lblCusto.Text = "Custo :";
             // 
@@ -377,7 +377,7 @@
             this.lblCategoria.Font = new System.Drawing.Font("Tahoma", 13.8F);
             this.lblCategoria.Location = new System.Drawing.Point(12, 191);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(61, 28);
+            this.lblCategoria.Size = new System.Drawing.Size(50, 23);
             this.lblCategoria.TabIndex = 33;
             this.lblCategoria.Text = "Cat.:";
             // 
@@ -387,7 +387,7 @@
             this.lblCor.Font = new System.Drawing.Font("Tahoma", 13.8F);
             this.lblCor.Location = new System.Drawing.Point(13, 238);
             this.lblCor.Name = "lblCor";
-            this.lblCor.Size = new System.Drawing.Size(61, 28);
+            this.lblCor.Size = new System.Drawing.Size(51, 23);
             this.lblCor.TabIndex = 36;
             this.lblCor.Text = "Cor :";
             // 
@@ -397,7 +397,7 @@
             this.lblTema.Font = new System.Drawing.Font("Tahoma", 13.8F);
             this.lblTema.Location = new System.Drawing.Point(367, 238);
             this.lblTema.Name = "lblTema";
-            this.lblTema.Size = new System.Drawing.Size(83, 28);
+            this.lblTema.Size = new System.Drawing.Size(70, 23);
             this.lblTema.TabIndex = 37;
             this.lblTema.Text = "Tema :";
             // 

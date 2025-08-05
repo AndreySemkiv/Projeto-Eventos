@@ -173,6 +173,12 @@
     <Compile Include="CorView.Designer.cs">
       <DependentUpon>CorView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Orçamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orçamentos.Designer.cs">
+      <DependentUpon>Orçamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProdutoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </Compile>
     <EmbeddedResource Include="CorView.resx">
       <DependentUpon>CorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orçamentos.resx">
+      <DependentUpon>Orçamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProdutoView.resx">
       <DependentUpon>ProdutoView.cs</DependentUpon>
