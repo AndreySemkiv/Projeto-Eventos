@@ -35,13 +35,21 @@ namespace Eventos.View
 
             TableLayoutPanel mainLayout = new TableLayoutPanel();
         mainLayout.Dock = DockStyle.Fill;
-        mainLayout.Pading = new Padding(15);
+        mainLayout.Padding = new Padding(15);
         mainLayout.ColumnCount = 1;
         mainLayout.RowCount = 5;
         mainLayout.RowStyles.Add(new RowStyle(SizeType.Absolute,130));
-      
-        mainLayout.Dock = DockStyle.Fill;
-        mainLayout.Dock = DockStyle.Fill;
+        mainLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 130));
+        mainLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 100));
+        mainLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
+        this.Controls.Add(mainLayout);
+
+            Panel headerPanel = CreateHeaderPanel();
+            mainLayout.Controls.Add(headerPanel, 0, 1);
+
+            DataGridView itensGridView = CreateItemsDataGridView();
+            mainLayout.Controls.Add(itemGridView, 0, 2);
+
         }
     }
 }
